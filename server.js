@@ -10,7 +10,7 @@ app.use("/file", express.static("/tmp"));
 app.use("/public"express.static("/dist"))
 
 app.get("/upload-file", (req, res) => {
-  res.sendFile(__dirname + "/dist/index.html");
+  res.sendFile("/dist/index.html");
 });
 
 app.get("/files",async(req,res)=>{
