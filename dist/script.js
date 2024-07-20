@@ -13,4 +13,5 @@ const handleSubmit = async(event)=>{
 
         await fetch("/upload-file",{method:"POST",body:nf,"Content-Type":"multipart/form-data"});
     }
+    location.reload();
 }
