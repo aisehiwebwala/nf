@@ -7,7 +7,7 @@ const port = 3000;
 
 app.use(express.json());
 app.use("/file", express.static("/tmp"));
-app.use("/public"express.static("/dist"))
+app.use("/public"express.static(__dirname+"/dist"))
 
 app.get("/upload-file", (req, res) => {
   res.sendFile("/dist/index.html");
