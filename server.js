@@ -9,7 +9,7 @@ app.use(express.json());
 app.use("/file", express.static("/tmp"));
 
 app.get("/upload-file", (req, res) => {
-  res.sendFile("/dist/index.html");
+  res.sendFile(__dirname+"/dist/index.html");
 });
 
 app.get("/files",async(req,res)=>{
