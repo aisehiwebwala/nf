@@ -6,9 +6,11 @@ const app = express();
 const port = 3000;
 
 app.use(express.json());
-app.use("/file", express.static("/tmp"));
 app.use("/public",express.static(__dirname+"/dist"));
 
+app.get("/file:fn",(req,res)=>{
+  res.sendFile("/tmp/"+req.params.fn);
+})
 app.get("/upload-file", (req, res) => {
   res.sendFile(__dirname+"/dist/index.html");
 });
