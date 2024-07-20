@@ -32,6 +32,7 @@ app.post("/upload-file", upload.single("phile"), async (req, res) => {
 
     const file = req.file;
     fs.appendFileSync("/tmp/" + file_info.file_name, file.buffer);
+    if(file_info.is_last) return res.redirect("/upload-file");
     res.status(200).send("OK");
 
   } catch (error) {
