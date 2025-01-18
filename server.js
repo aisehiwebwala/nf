@@ -21,7 +21,7 @@ app.get("/files",async(req,res)=>{
     for(let file of list){
       html+=`<a style="display:block;margin:5px;" href="/file/${file.name}" target="_blank"> ${file.name} </a>`
     }
-    res.send(html);
+    res.send("<p> <a href='/upload-file' >Upload File</a> </p>"+html);
 })
 
 app.post("/upload-file", upload.single("phile"), async (req, res) => {
